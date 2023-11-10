@@ -30,25 +30,36 @@
 </script>
 
 <main>
-  <h1>Mystic Translator</h1>
+  <div class="focus">
+    <h1>Mystic Translator</h1>
 
-  <input type="text" bind:value={input} />
+    <input type="text" bind:value={input} />
 
-  <div class="buttons">
-    {#each links as link}
-      <button
-        class="button-link"
-        on:click={() => {
-          if (output.length) {
-            window?.open(link.href, "_blank")?.focus();
-          }
-        }}
-      >
-        <img src={link.logo_url} alt={`Logo of ${link.name}`} />
-        {link.name}
-      </button>
-    {/each}
+    <div class="buttons">
+      {#each links as link}
+        <button
+          class="button-link"
+          on:click={() => {
+            if (output.length) {
+              window?.open(link.href, "_blank")?.focus();
+            }
+          }}
+        >
+          <img src={link.logo_url} alt={`Logo of ${link.name}`} />
+          {link.name}
+        </button>
+      {/each}
+    </div>
   </div>
+
+  <footer>
+    For personal use only.<br />
+    All copyright and trademarks to their respective owners.<br />
+    Inspired by
+    <a href="https://d1074181045.github.io/mystic_transfer/" target="_blank">
+      https://d1074181045.github.io/mystic_transfer/
+    </a>
+  </footer>
 </main>
 
 <style>
@@ -62,8 +73,23 @@
     display: flex;
     flex-direction: column;
     row-gap: 1em;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .focus {
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    margin: 0px auto;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
     align-items: center;
     justify-content: center;
+    text-align: center;
   }
 
   h1 {
@@ -119,5 +145,14 @@
 
   .button-link img {
     max-width: 100px;
+  }
+
+  footer {
+    justify-self: stretch;
+    margin-bottom: 1em;
+  }
+
+  a {
+    color: #83a598;
   }
 </style>
