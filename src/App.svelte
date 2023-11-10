@@ -54,11 +54,11 @@
 
   <footer>
     For personal use only.<br />
-    All copyright and trademarks to their respective owners.<br />
+    All trademarks are property of their respective owners.<br />
     Inspired by
     <a href="https://d1074181045.github.io/mystic_transfer/" target="_blank">
       mystic_transfer
-    </a>
+    </a>.
   </footer>
 </main>
 
@@ -150,6 +150,7 @@
   footer {
     justify-self: stretch;
     margin-bottom: 1em;
+    font-size: 0.75em;
   }
 
   a {
