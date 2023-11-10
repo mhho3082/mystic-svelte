@@ -57,7 +57,7 @@
     All copyright and trademarks to their respective owners.<br />
     Inspired by
     <a href="https://d1074181045.github.io/mystic_transfer/" target="_blank">
-      https://d1074181045.github.io/mystic_transfer/
+      mystic_transfer
     </a>
   </footer>
 </main>
