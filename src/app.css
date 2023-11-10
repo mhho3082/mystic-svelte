@@ -1,0 +1,32 @@
+/* Make it way easier to style things */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* https://www.dave-woods.co.uk/100-height-layout-using-css/ */
+html,
+body,
+body > #app {
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0 auto;
+  position: relative;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Gruvbox dark colours */
+  color: #fbf1c7;
+  background-color: #1d2021;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
