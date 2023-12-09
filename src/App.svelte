@@ -28,8 +28,10 @@
     {
       link: `https://18comic.vip`,
       href: `https://18comic.vip/album/${output}`,
-      logo_url:
-        "https://cdn-msp.jmcomic.me/media/logo/new_logo.png?v=2023110801",
+      logo_url: `https://cdn-msp.jmcomic.me/media/logo/new_logo.png?v=${new Date()
+        .toISOString()
+        .replace(/T.*/, "")
+        .replace(/-/g, "")}01`,
       name: "禁漫天堂",
     },
   ];
@@ -150,7 +152,7 @@
   }
 
   .button-link img {
-    max-width: 100px;
+    max-height: 40px;
   }
 
   footer {
