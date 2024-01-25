@@ -55,7 +55,7 @@
           input_field.focus();
         }}
       >
-        🞩
+        ⌫
       </button>
     </div>
 
@@ -131,16 +131,16 @@
 
     * {
       background-color: inherit;
-      border: none;
 
+      border: none;
       font-size: 1.25em;
       text-align: center;
       padding: 5px;
-      color: #fbf1c7;
     }
 
     input {
       width: 100%;
+      color: #fbf1c7;
 
       &:focus {
         outline: none;
@@ -154,6 +154,7 @@
     button {
       padding: 5px 10px;
       border-radius: 5px;
+      color: #bdae93;
 
       &:hover {
         background-color: #665c54;
