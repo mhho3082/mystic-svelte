@@ -1,5 +1,6 @@
 <script lang="ts">
   let input = "";
+  let input_field: HTMLInputElement;
 
   $: output = input.replace(/\D/g, "");
 
@@ -38,10 +39,25 @@
 </script>
 
 <main>
-  <div class="focus">
+  <div class="container">
     <h1>Mystic Translator</h1>
 
-    <input type="text" inputmode="numeric" bind:value={input} />
+    <div class="inputs">
+      <input
+        type="text"
+        inputmode="numeric"
+        bind:value={input}
+        bind:this={input_field}
+      />
+      <button
+        on:click={() => {
+          input = "";
+          input_field.focus();
+        }}
+      >
+        🞩
+      </button>
+    </div>
 
     <div class="buttons">
       {#each links as link}
@@ -70,7 +86,7 @@
   </footer>
 </main>
 
-<style>
+<style lang="scss">
   main {
     height: 100%;
     max-height: 100%;
@@ -85,7 +101,7 @@
     text-align: center;
   }
 
-  .focus {
+  .container {
     height: 100%;
     max-height: 100%;
     width: 100%;
@@ -104,15 +120,48 @@
     margin: 0px auto;
   }
 
-  input {
+  .inputs {
     width: clamp(25ch, 70%, 50ch);
-    padding: 5px;
-    font-size: 1.25em;
-    text-align: center;
-
     background-color: #504945;
-    border-color: #665c54;
-    color: #fbf1c7;
+    border: 1px solid #665c54;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: row;
+
+    * {
+      background-color: inherit;
+      border: none;
+
+      font-size: 1.25em;
+      text-align: center;
+      padding: 5px;
+      color: #fbf1c7;
+    }
+
+    input {
+      width: 100%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &:focus-within {
+      outline: 1px solid #8ec07c;
+    }
+
+    button {
+      padding: 5px 10px;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: #665c54;
+      }
+      &:active {
+        background-color: #3c3836;
+      }
+    }
   }
 
   .buttons {
@@ -120,15 +169,12 @@
     display: grid;
     column-gap: 10px;
     row-gap: 10px;
-  }
-  @media (min-width: 480px) {
-    .buttons {
+
+    @media (min-width: 480px) {
       grid-auto-flow: column;
       grid-template-columns: repeat(4, 1fr);
     }
-  }
-  @media (max-width: 480px) {
-    .buttons {
+    @media (max-width: 480px) {
       grid-auto-flow: row;
       grid-template-rows: repeat(4, 1fr);
     }
@@ -149,10 +195,10 @@
     padding: 5px;
     column-gap: 5px;
     row-gap: 5px;
-  }
 
-  .button-link img {
-    max-height: 40px;
+    img {
+      max-height: 40px;
+    }
   }
 
   footer {
