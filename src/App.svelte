@@ -134,8 +134,7 @@
 
       border: none;
       font-size: 1.25em;
-      text-align: center;
-      padding: 5px;
+      padding: 5px 10px;
     }
 
     input {
@@ -152,9 +151,9 @@
     }
 
     button {
-      padding: 5px 10px;
       border-radius: 5px;
       color: #bdae93;
+      text-align: center;
 
       &:hover {
         background-color: #665c54;
@@ -171,11 +170,11 @@
     column-gap: 10px;
     row-gap: 10px;
 
-    @media (min-width: 480px) {
+    @media (min-width: 768px) {
       grid-auto-flow: column;
       grid-template-columns: repeat(4, 1fr);
     }
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       grid-auto-flow: row;
       grid-template-rows: repeat(4, 1fr);
     }
